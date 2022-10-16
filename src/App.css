@@ -19,9 +19,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: flex-end;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.head {
+  display: flex;
+    margin: 20px;
+    font-size: 22px;
+    margin-right: 33px;
+    list-style: none;
+}
+.head, .page {
+  
+  margin-right: 30px;
+}
+.page {
+  float: right;
+}
+a:link {
+  text-decoration: none;
 }
 
 .App-link {

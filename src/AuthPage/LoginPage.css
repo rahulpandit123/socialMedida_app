@@ -1,0 +1,23 @@
+.loginpage,.loginpage1 {
+    background-color: white;
+    width: 50%;
+    height: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    align-items: center;
+}
+.loginpage1 {
+    border: 1px solid black;
+    box-shadow: 5px 10px 18px #535151;
+    margin-top: 4%;
+}
+.login_text {
+    text-align: center;
+    /* margin: 34px; */
+    font-size: xx-large;
+    font-weight: bold;
+}
+.forgetpass{
+    float:right;
+}

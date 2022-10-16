@@ -1,0 +1,11 @@
+.header1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(78,212,134);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.login_signup {
+    float: right;
+}

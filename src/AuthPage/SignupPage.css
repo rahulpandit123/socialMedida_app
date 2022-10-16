@@ -1,0 +1,14 @@
+.signupPage {
+background-color: white;
+    width: 60%;
+    margin: auto;
+    margin-top: 4rem;
+    font-size: 18px;
+    padding-left: 15px;
+}
+.signupform_inside,.heading_signup {
+    margin-left: 10%;
+}
+input {
+    max-width: 80%;
+}

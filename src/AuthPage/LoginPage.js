@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { saveToken, Login } from "../ReduxStore/Action";
 import "./LoginPage.css";
 import Signup from "./Signup";
 import axios from "axios";
@@ -24,8 +25,11 @@ const LoginPage = () => {
         console.log("this is the res: ", res, res.data);
         if (res.status == "201") {
           localStorage.token = res.data.token;
-          localStorage.isAuthenticated = true;
           navigate("/welcome");
+          dispatch(saveToken(res.data.body[0]));
+          alert(res.data.body[0]);
+          dispatch(Login(true));
+          localStorage.isAuthenticated = true;
         } else {
           setError(res.data.message);
         }

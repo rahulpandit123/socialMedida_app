@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { saveToken, Login } from "../ReduxStore/Action";
 import axios from "axios";
 import "./SignupPage.css";
+// import saveTokenRedux from "../ReduxStore/TokenReducer";
 const SignupPage = () => {
   const [userName, setuserName] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const signupHandler = async (e) => {
     e.preventDefault();
     if (Password === confirmPassword) {
@@ -30,6 +34,17 @@ const SignupPage = () => {
       if (res.status == "201") {
         localStorage.setItem("token", res.data.body[0]);
         navigate("/welcome");
+        console.log("signup Token value->> ", res.data.body[0]);
+        console.log(res);
+        dispatch(Login(true));
+        let tk = res.data.body[0];
+        if (tk) {
+          dispatch(saveToken(res.data.body[0]));
+          console.log(
+            "SAVING Token to dispatch",
+            dispatch(saveToken(res.data.body[0]))
+          );
+        }
       }
     } else {
       alert("Password and confirm Password do not match");

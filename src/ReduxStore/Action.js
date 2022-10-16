@@ -7,7 +7,15 @@ export const Login = () => {
 
 export const Logout = () => {
   return {
-    typeof: "LOGOUT",
+    type: "LOGOUT",
     payload: false,
+  };
+};
+
+export const saveToken = (token) => {
+  console.log("Token value in action ->>", token);
+  return {
+    type: "SaveToken",
+    payload: token,
   };
 };
